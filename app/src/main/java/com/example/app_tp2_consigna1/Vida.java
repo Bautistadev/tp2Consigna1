@@ -15,7 +15,7 @@ public class Vida {
         this.Vida--;
     }
     public Boolean isCero(){
-        if(this.Vida == 0)
+        if(this.Vida == 1)
             return true;
         else
             return false;
