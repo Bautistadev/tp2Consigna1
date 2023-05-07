@@ -8,14 +8,14 @@ public class Vida {
 
     }
 
-    public String getVida(){
-        return String.valueOf(this.Vida);
+    public Integer getVida(){
+        return this.Vida;
     }
     public void Decrementar(){
         this.Vida--;
     }
     public Boolean isCero(){
-        if(this.Vida == 0)
+        if(this.Vida == 1)
             return true;
         else
             return false;
