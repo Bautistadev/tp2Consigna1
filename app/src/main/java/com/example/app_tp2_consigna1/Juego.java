@@ -2,6 +2,9 @@ package com.example.app_tp2_consigna1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +19,7 @@ public class Juego extends AppCompatActivity implements View.OnClickListener {
     private Contador contador;
     private String num = String.valueOf(numGenerator.getRandomNum());
 
+    private Intent panelMain;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +35,7 @@ public class Juego extends AppCompatActivity implements View.OnClickListener {
 
         this.btnComparar.setOnClickListener(this);
 
+        panelMain = new Intent(Juego.this,MainActivity.class);
     }
 
     @Override
@@ -42,12 +47,39 @@ public class Juego extends AppCompatActivity implements View.OnClickListener {
              }else{
                  if(this.vida.isCero()) {
                      this.btnComparar.setEnabled(false);
-                     System.out.println("PERDISTE");
+                     guardar();
+                     startActivity(this.panelMain);
                  }else {
+                     SacarVida();
                      this.vida.Decrementar();
-
                  }
              }
+        }
+    }
+
+    private void guardar(){
+        SharedPreferences preferences = getSharedPreferences("puntuaciones", Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("ultimaPuntuacion",this.contador.getValor());
+        if(Integer.parseInt(this.contador.getValor()) > Integer.parseInt(preferences.getString("maximaPuntuacion","0")))
+            editor.putString("maximaPuntuacion",this.contador.getValor());
+        editor.commit();
+
+    }
+
+    private void SacarVida(){
+        switch (this.vida.getVida()){
+            case 5: findViewById(R.id.Corazon5).setVisibility(View.INVISIBLE);
+                    break;
+            case 4: findViewById(R.id.Corazon4).setVisibility(View.INVISIBLE);
+                    break;
+            case 3: findViewById(R.id.Corazon3).setVisibility(View.INVISIBLE);
+                    break;
+            case 2: findViewById(R.id.Corazon2).setVisibility(View.INVISIBLE);
+                    break;
+            case 1: findViewById(R.id.Corazon1).setVisibility(View.INVISIBLE);
+                    break;
         }
     }
 }

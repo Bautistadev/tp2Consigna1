@@ -8,8 +8,8 @@ public class Vida {
 
     }
 
-    public String getVida(){
-        return String.valueOf(this.Vida);
+    public Integer getVida(){
+        return this.Vida;
     }
     public void Decrementar(){
         this.Vida--;

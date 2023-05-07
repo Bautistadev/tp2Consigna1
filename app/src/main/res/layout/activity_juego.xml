@@ -102,7 +102,7 @@
         app:srcCompat="@drawable/dados" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/Corazon1"
         android:layout_width="64dp"
         android:layout_height="66dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -114,7 +114,7 @@
         app:srcCompat="@drawable/heart_02_svgrepo_com" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/Corazon4"
         android:layout_width="64dp"
         android:layout_height="66dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -126,7 +126,7 @@
         app:srcCompat="@drawable/heart_02_svgrepo_com" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/Corazon5"
         android:layout_width="64dp"
         android:layout_height="66dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -138,7 +138,7 @@
         app:srcCompat="@drawable/heart_02_svgrepo_com" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/Corazon2"
         android:layout_width="64dp"
         android:layout_height="66dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -150,7 +150,7 @@
         app:srcCompat="@drawable/heart_02_svgrepo_com" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/Corazon3"
         android:layout_width="64dp"
         android:layout_height="66dp"
         app:layout_constraintBottom_toBottomOf="parent"
